@@ -11,11 +11,17 @@ const nextConfig = {
       },
     ]
   },
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "/lomba": { page: "/" },
+    }
+  },
   images: {
     domains: [
       `${process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID}.supabase.in`,
       "maulomba.vercel.app",
-      "maulomba.com"
+      "maulomba.com",
     ], // Add your CDN image url here
   },
 }
