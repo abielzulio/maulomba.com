@@ -112,9 +112,11 @@ export const getStaticPaths = async () => {
     }
   }
 
-  const paths = competitions?.map((competition) => ({
-    params: { slug: competition?.slug },
-  }))
+  const paths = competitions
+    ?.map((competition) => ({
+      params: { slug: competition?.slug },
+    }))
+    .filter((competition) => competition.params.slug !== "")
 
   return {
     paths,
