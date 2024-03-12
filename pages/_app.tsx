@@ -1,5 +1,4 @@
 import { MantineProvider } from "@mantine/core"
-import { Analytics } from "@vercel/analytics/react"
 import Footer from "components/Footer"
 import * as gtag from "lib/gtag"
 import type { AppProps } from "next/app"
@@ -23,8 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
+        defer
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-94DZGE8HM1"
+        src="https://analytics.zulio.me/script.js"
+        data-website-id="ed9f688b-6a26-4831-847c-00dc162183c2"
       />
       <Script
         id="google-analytics"
@@ -44,7 +45,6 @@ page_path: window.location.pathname,
         <Component {...pageProps} />
         <Footer />
       </MantineProvider>
-      <Analytics />
     </>
   )
 }
